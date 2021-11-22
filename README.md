@@ -8,11 +8,12 @@ This is my react api app that will shows random jokes, dad jokes, motivational l
 
 ## Setup
 
+```
 Goto the app website..
 $ www.boredkoala.com
 $ select from different options, jokes, quotes
 $ enjoy jokes, lines.. 
-
+```
 
 
 
