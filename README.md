@@ -1,3 +1,5 @@
+##React Hackathon
+
 # Bored-Koala-jokes
 This is my react api app that will shows random jokes, dad jokes, motivational lines. All of my data will be fetched from RapidAPI and will be showed in my react app.
 
@@ -5,6 +7,9 @@ This is my react api app that will shows random jokes, dad jokes, motivational l
 * React, 
 * JavaScript, 
 * SASS
+
+#Time-frame 
+- 48 hours
 
 ## Setup
 
