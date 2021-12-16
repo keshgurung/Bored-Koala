@@ -42,9 +42,12 @@ const JokeList = () => {
   //   setQuote
   //   JokeList()
   // }, [])
-
   useEffect(() => {
     getMovieData()
+    // if (value === 'browse movie') {
+    // } else {
+    //   console.log('error 1')
+    // }
   }, [])
   return <div></div>
 }

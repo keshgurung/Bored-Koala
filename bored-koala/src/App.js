@@ -1,14 +1,25 @@
 import './App.css'
-import JokeList from './Components/JokeList'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+// import JokeList from './pages/JokeList'
+import Home from './pages/Home'
+import JokeList from './pages/JokeList'
+
+// no switch in route@v6 replaced by route and component replaced by element
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1> welcome to jokes</h1>
-        <JokeList />
-      </header>
-    </div>
+    <Router>
+      <div className='App'>
+        <header className='App-header'>
+          <Routes>
+            {/* <Route path='/register' component={Register} />  old way of expressing reacr route */}
+
+            <Route path='/' element={<Home />} />
+            <Route path='/jokelist' element={<JokeList />} />
+          </Routes>
+        </header>
+      </div>
+    </Router>
   )
 }
 
