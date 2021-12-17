@@ -1,11 +1,9 @@
 import React from 'react'
 
-const JokeCard = ({ title, content }) => {
+const JokeCard = ({ value }) => {
   return (
     <>
-      <h3>{title}</h3>
-      console.log({title})<p>{content}</p>
-      console.log({content})
+      <h3>{value}</h3>
     </>
   )
 }
