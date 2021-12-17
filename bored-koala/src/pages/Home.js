@@ -1,11 +1,18 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getMovieData, getJokeData, getMusicData } from '../helpers/api'
+import JokeCard from '../Components/JokeCard'
 
 const Home = () => {
+  // const navigate = useNavigate()
+
   const [click, setClick] = useState(false)
   const [value, setValue] = useState(null)
+  const [movie, setMovie] = useState([])
+  const [music, setMusic] = useState([])
+  const [jokes, setJokes] = useState(null)
+
   const handleClick = (event) => {
     const newVal = event.target.value
     setClick(true)
@@ -19,7 +26,8 @@ const Home = () => {
     } else if (value === 'search music') {
       getMusicData()
     } else if (value === 'get random') {
-      getJokeData()
+      const newJoke = getJokeData()
+      setJokes(newJoke)
     }
   }, [value])
 
@@ -47,17 +55,28 @@ const Home = () => {
           >
             Search Music{' '}
           </button>
-          <button
-            onClick={handleClick}
-            className='favorite styled'
-            type='button'
-            value='get random'
-          >
-            Get random jokes/quotes
-          </button>
+          <Link to={'/joke'}>
+            <button
+            // onClick={handleClick}
+            // className='favorite styled'
+            // type='button'
+            // value='get random'
+            >
+              Get random jokes/quotes
+            </button>
+          </Link>
         </div>
       ) : (
-        console.log(value)
+        <></>
+        // <section className='story-list'>
+        //   {jokes ? (
+        //     <JokeCard {...jokes} isHorizontal={true} />
+        //   ) : (
+        //     <div>
+        //       <h4>Loading...</h4>
+        //     </div>
+        //   )}
+        // </section>
       )}
     </>
   )

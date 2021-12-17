@@ -1,55 +1,24 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { getMovieData } from '../helpers/api'
+import { getJokeData } from '../helpers/api'
+import JokeCard from '../Components/JokeCard'
 
 const JokeList = () => {
-  // const [quote, setQuote] = useState([])
-
-  // useEffect(() => {
-  //   const getAllData = async () => {
-  //     try {
-  //       const allData = await getData()
-  //       setQuote(allData)
-  //       console.log(quote)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   getAllData()
-  // }, [])
-  // console.log(quote)
-
-  // useEffect(() => {
-  //   fetch('https://motivational-quotes1.p.rapidapi.com/motivation', {
-  //     method: 'POST',
-  //     headers: {
-  //       'content-type': 'application/json',
-  //       'x-rapidapi-host': 'motivational-quotes1.p.rapidapi.com',
-  //       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
-  //     },
-  //     body: {
-  //       key1: 'value',
-  //       key2: 'value',
-  //     },
-  //   })
-  //     .then((response) => {
-  //       const data = response.json()
-  //     })
-  //     .then((data) => console.log(data[1]))
-  //     .catch((err) => {
-  //       console.error(err)
-  //     })
-  //   setQuote
-  //   JokeList()
-  // }, [])
+  const [jokes, setJokes] = useState(null)
   useEffect(() => {
-    getMovieData()
-    // if (value === 'browse movie') {
-    // } else {
-    //   console.log('error 1')
-    // }
+    getJokeData().then(setJokes)
   }, [])
-  return <div></div>
-}
 
+  return (
+    <section className='story-list'>
+      {jokes ? (
+        <JokeCard {...jokes} isHorizontal={true} />
+      ) : (
+        <div>
+          <h4>Loading...</h4>
+        </div>
+      )}
+    </section>
+  )
+}
 export default JokeList

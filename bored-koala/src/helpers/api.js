@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const getJokeData = async () => {
-  const options = {
+  const config = {
     method: 'GET',
     url: 'https://joke-generator.p.rapidapi.com/generate-joke',
     headers: {
@@ -9,15 +9,8 @@ export const getJokeData = async () => {
       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
     },
   }
-
-  axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data)
-    })
-    .catch(function (error) {
-      console.error(error)
-    })
+  const response = await axios(config)
+  return response.data
 }
 
 export const getMusicData = async () => {
@@ -26,7 +19,7 @@ export const getMusicData = async () => {
     url: 'https://genius.p.rapidapi.com/search',
     params: { q: 'Kendrick Lamar' },
     headers: {
-      'x-rapidapi-host': 'genius.p.rapidapi.com',
+      'x-raidapi-host': 'genius.p.rapidapi.com',
       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
     },
   }
