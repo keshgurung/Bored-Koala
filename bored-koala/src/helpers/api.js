@@ -26,14 +26,34 @@ export const getMusicData = async () => {
 export const getMovieData = async () => {
   const config = {
     method: 'GET',
-    url: 'https://imdb8.p.rapidapi.com/auto-complete',
-    params: { q: 'game of thr' },
+    url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
+    params: { s: 'Avengers', page: '1', r: 'json' },
     headers: {
-      'x-rapidapi-host': 'imdb8.p.rapidapi.com',
+      'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com',
       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
     },
   }
 
+  // axios.request(config).then(function (response) {
+  //   return response.data;
+  // }).catch(function (error) {
+  //   console.error(error);
+  // });
+
+  const response = await axios(config)
+  return response.data.Search
+}
+
+export const getSingleMovie = async (imdbID) => {
+  const config = {
+    method: 'GET',
+    url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
+    params: { i: `${imdbID}` },
+    headers: {
+      'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com',
+      'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
+    },
+  }
   const response = await axios(config)
   return response.data
 }

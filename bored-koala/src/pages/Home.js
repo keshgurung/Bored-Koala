@@ -25,7 +25,7 @@ const Home = () => {
       <div>
         <h1>Welcome to Bored Koala</h1>
         <h3>what would you like to do today</h3>
-        <Link to={'/movie'}>
+        <Link to={'/movies'}>
           <button
           // onClick={handleClick}
           // className='favorite styled'
