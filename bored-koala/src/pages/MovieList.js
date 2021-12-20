@@ -3,14 +3,16 @@ import { useState, useEffect } from 'react'
 import { getMovieData } from '../helpers/api'
 import SearchIcon from '@material-ui/icons/Search'
 import MovieCard from '../Components/MovieCard'
+import { setValue, getValue } from '../helpers/auth'
 
 const MovieList = () => {
   const [movies, setMovies] = useState([])
-  const [value, setValue] = useState()
+  // const [value, setValue] = useState()
+
   const typeChange = (event) => {
     setValue(event.target.value)
   }
-  console.log(value)
+  console.log(getValue())
 
   useEffect(() => {
     const getData = async () => {

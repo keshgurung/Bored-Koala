@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getValue } from '../helpers/auth'
 
 export const getJokeData = async () => {
   const config = {
@@ -23,11 +24,11 @@ export const getMusicData = async () => {
   return response.data
 }
 
-export const getMovieData = async () => {
+export const getMovieData = async (value) => {
   const config = {
     method: 'GET',
     url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
-    params: { s: 'Avengers', page: '1', r: 'json' },
+    params: { s: `${getValue()}` },
     headers: {
       'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com',
       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
