@@ -7,6 +7,7 @@ import SingleMovie from './pages/SingleMovie'
 import Header from './pages/Header'
 import About from './pages/About'
 import MusicList from './pages/MusicList'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // no switch in route@v6 replaced by route and component replaced by element
 
