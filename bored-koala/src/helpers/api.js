@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { getValue } from '../helpers/auth'
 
 export const getJokeData = async () => {
   const config = {
@@ -10,25 +9,25 @@ export const getJokeData = async () => {
   return response.data
 }
 
-export const getMusicData = async () => {
+export const getMusicData = async (search) => {
   const config = {
     method: 'GET',
     url: 'https://genius.p.rapidapi.com/search',
-    params: { q: 'Kendrick Lamar' },
+    params: { q: `${search}` },
     headers: {
       'x-raidapi-host': 'genius.p.rapidapi.com',
       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
     },
   }
   const response = await axios(config)
-  return response.data
+  return response.data.response.hits
 }
 
-export const getMovieData = async (value) => {
+export const getMovieData = async (search) => {
   const config = {
     method: 'GET',
     url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
-    params: { s: `${getValue()}` },
+    params: { s: `${search}` },
     headers: {
       'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com',
       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',

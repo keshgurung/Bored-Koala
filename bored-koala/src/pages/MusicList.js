@@ -1,13 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getMovieData } from '../helpers/api'
-// import SearchIcon from '@material-ui/icons/Search'
-import MovieCard from '../Components/MovieCard'
+import { getMusicData } from '../helpers/api'
+import SongCard from '../Components/SongCard'
 // import { useNavigate } from 'react-router-dom'
 
-const MovieList = () => {
-  const [movies, setMovies] = useState([])
-  const [search, setSearch] = useState('star') //make ' star' inside so that default value will be star in search item everytime the userrefreshes...
+const MusicList = () => {
+  const [songs, setSongs] = useState([])
+  const [search, setSearch] = useState('eminem') //make ' star' inside so that default value will be star in search item everytime the userrefreshes...
   const [value, setValue] = useState('')
   const handleChange = (event) => {
     event.preventDefault()
@@ -25,26 +24,26 @@ const MovieList = () => {
   console.log('the search is', search)
 
   useEffect(() => {
-    getMovieData(search).then(setMovies)
+    getMusicData(search).then(setSongs)
   }, [search])
   // const getData = async () => {
   //   const allMovies = await getMovieData(search)
   //   setMovies(allMovies)
   //   }
   //   getData()
-  //   console.log('the data is', movies)
+  //   console.log('the data is', songs)
   // }, [])
 
   return (
     <>
-      <h4>Search Movies:</h4>
+      <h4>Enter an Artist Name:</h4>
       <div className='Search'>
         <form onSubmit={handleSubmit}>
           <input
             type='text'
             name='search'
             value={value}
-            placeholder='Enter a Movie Title'
+            placeholder='Enter an Artist Name'
             onChange={handleChange}
           />
           {/* <button onClick={handleChange}>
@@ -52,19 +51,19 @@ const MovieList = () => {
           </button> */}
         </form>
       </div>
-      {!movies ? (
+      {!songs ? (
         <p>
           {' '}
-          Sorry, there are no movies with '{search}' in the title. Try using
+          Sorry, there are no songs with '{search}' in the title. Try using
           other characters.{' '}
         </p>
       ) : (
         <section className='movie-list'>
-          <p> Movies with '{search}' in their title </p>
+          <p> Greatest Top 10 Hit Songs of '{search}' : </p>
           <ul>
-            {movies.map((movie) => (
-              <li key={movie.imdbID}>
-                <MovieCard {...movie} />
+            {songs.map((song) => (
+              <li key={song.result.id}>
+                <SongCard {...song} />
               </li>
             ))}
           </ul>
@@ -74,4 +73,4 @@ const MovieList = () => {
   )
 }
 
-export default MovieList
+export default MusicList
