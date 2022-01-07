@@ -36,7 +36,7 @@ Bored Koala is a React API app project developed using two api's from RapidAPI a
 
 ![2](/assets/2.png)
 
-3. Use the search bar to search for movies and the result will be displayed on the scree.
+3. Use the search bar to search for movies and the result will be displayed on the screen.
 
 ![3](/assets/3.png)
 
