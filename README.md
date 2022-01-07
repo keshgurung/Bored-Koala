@@ -111,3 +111,83 @@ After the received data is saved on movies, i use (map) function to show all the
  ))}
 
 ```
+
+## Challenges
+
+The main challenge of this project was to apply search option in the application and get results accordingly. The value from the search bar has to be updated with the API search params to get the result.
+
+Secondly, it was a bit tedious to get all information about the movies from a single request. Data from first request had to be passed to another request to get the desired result, with the movie id.
+
+Error handling was also an challenging aspect of the project. Getting a negative response from axios request and showing the result in the page was a bit tricky and challenging.
+
+## Wins
+
+Using new concept of hooks in react such as useState(), useEffect() to get the desired result was my biggest win. In the search bar, the search value submitted was first passed to setValue() where it will record the changed searched value and than later passed to setSearch() when pressed enter. The new search value was passed as params in the axios get request in template literals as the value keeps changing when user enters different search values.
+
+```
+** Form input and change **
+<input
+            type='text'
+            name='search'
+            value={value}
+            placeholder='Enter a Movie Title'
+            onChange={handleChange}
+/>
+
+** Storing changing value **
+
+const handleChange = (event) => {
+    event.preventDefault()
+    const values = event.target.value
+    setValue(values)
+  }
+
+** Setting value into search that we will use in axios get request **
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setSearch(value)
+    setValue('')
+  }
+
+** search value as params with template literals (` `)
+
+params: { s: `${search}` },
+
+```
+
+Getting values from previous request:
+With the search results, a unique imdbID was returned which was used to get more information about the movies. To reuse the imdbID value in another request, another important react hook, useParams() was used.
+
+```
+** use od useParams() hook **
+const { imdbID } = useParams()
+
+** Getting result of single query using unique imdbID from previous request **
+
+  useEffect(() => {
+    getSingleMovie(imdbID).then(setMovie)
+  }, [imdbID])
+
+```
+
+Another important win was the use of ternary operator in the application for error messages or when the search result didnot exist.
+
+```
+** using ? for error message **
+{movie ? (
+        <SingleMovieCard {...movie} isHorizontal={true} />
+      ) : (
+        <div>
+          <h4>Loading...</h4>
+        </div>
+)}
+
+## Future Features
+
+Some of the extra features to implement in the future are:
+- show recommendations based on the movies selected.
+- make the application dynamic on all devices (mobiles, pads and larger screens).
+- adding a sort feature on result page.
+- implement a paginations feature to show more movies.
+```
