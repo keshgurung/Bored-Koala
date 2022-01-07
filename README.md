@@ -182,12 +182,13 @@ Another important win was the use of ternary operator in the application for err
           <h4>Loading...</h4>
         </div>
 )}
+```
 
 ## Future Features
 
 Some of the extra features to implement in the future are:
+
 - show recommendations based on the movies selected.
 - make the application dynamic on all devices (mobiles, pads and larger screens).
 - adding a sort feature on result page.
 - implement a paginations feature to show more movies.
-```
