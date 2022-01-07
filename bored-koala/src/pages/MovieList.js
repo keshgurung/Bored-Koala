@@ -47,9 +47,6 @@ const MovieList = () => {
             placeholder='Enter a Movie Title'
             onChange={handleChange}
           />
-          {/* <button onClick={handleChange}>
-            <SearchIcon />
-          </button> */}
         </form>
       </div>
       {!movies ? (

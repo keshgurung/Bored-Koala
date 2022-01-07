@@ -33,13 +33,6 @@ export const getMovieData = async (search) => {
       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
     },
   }
-
-  // axios.request(config).then(function (response) {
-  //   return response.data;
-  // }).catch(function (error) {
-  //   console.error(error);
-  // });
-
   const response = await axios(config)
   return response.data.Search
 }
