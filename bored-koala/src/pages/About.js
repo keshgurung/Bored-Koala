@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
+    <div className='about'>
       <p>
         {' '}
         Bored Koala is a react hackathon project developed using two api's from
@@ -21,15 +21,13 @@ const About = () => {
       <p>Chucknorris joke API : https://api.chucknorris.io/</p>
 
       <h3>To Collaborate / contact :</h3>
-
-      <div div className='social-info'>
-        <p>Kesh Gurung</p>
+      <p>Kesh Gurung</p>
+      <p>
         <a
           href='https://github.com/keshgurung'
           target='_blank'
           rel='noreferrer'
         >
-          <i className='fab fa-github' />
           GitHub
         </a>{' '}
         <span>&nbsp;&nbsp;</span>
@@ -38,13 +36,13 @@ const About = () => {
           target='_blank'
           rel='noreferrer'
         >
-          <i className='fab fa-linkedin'></i>linkedin
+          linkedin
         </a>
-        <i className='far fa-envelope'></i>
-        <p>
-          <a href='mailto:gurungkesh9@gmail.com'>gurungkesh9@gmail.com</a>
-        </p>
-      </div>
+      </p>
+
+      <p>
+        <a href='mailto:gurungkesh9@gmail.com'>gurungkesh9@gmail.com</a>
+      </p>
     </div>
   )
 }

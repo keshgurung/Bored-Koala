@@ -13,7 +13,7 @@ const SingleMovie = () => {
   }, [imdbID])
 
   return (
-    <section>
+    <section className='single'>
       {movie ? (
         <SingleMovieCard {...movie} isHorizontal={true} />
       ) : (

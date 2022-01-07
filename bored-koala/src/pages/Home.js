@@ -20,9 +20,9 @@ const Home = () => {
   //   }
   // }, [value])
   return (
-    <>
+    <div className='home-page'>
       {/* {!click ? ( */}
-      <div>
+      <div className='Bored'>
         <h1>Welcome to Bored Koala</h1>
         <h3>what would you like to do today</h3>
         <Link to={'/movies'}>
@@ -55,7 +55,7 @@ const Home = () => {
         //   )}
         // </section>
       )} */}
-    </>
+    </div>
   )
 }
 

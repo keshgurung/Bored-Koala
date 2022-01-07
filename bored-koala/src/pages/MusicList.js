@@ -35,7 +35,7 @@ const MusicList = () => {
   // }, [])
 
   return (
-    <>
+    <div className='search'>
       <h4>Enter an Artist Name:</h4>
       <div className='Search'>
         <form onSubmit={handleSubmit}>
@@ -52,24 +52,30 @@ const MusicList = () => {
         </form>
       </div>
       {!songs ? (
-        <p>
-          {' '}
-          Sorry, there are no songs with '{search}' in the title. Try using
-          other characters.{' '}
-        </p>
+        <div className='not-found'>
+          <p>
+            {' '}
+            Sorry, there are no songs with '{search}' in the title. Try using
+            other characters.{' '}
+          </p>
+        </div>
       ) : (
-        <section className='movie-list'>
-          <p> Greatest Top 10 Hit Songs of '{search}' : </p>
-          <ul>
-            {songs.map((song) => (
-              <li key={song.result.id}>
-                <SongCard {...song} />
-              </li>
-            ))}
-          </ul>
-        </section>
+        <>
+          <div div className='movie'>
+            <p> Greatest Top 10 Hit Songs of '{search}' : </p>
+          </div>
+          <section className='movie-list'>
+            <ul>
+              {songs.map((song) => (
+                <li key={song.result.id}>
+                  <SongCard {...song} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        </>
       )}
-    </>
+    </div>
   )
 }
 

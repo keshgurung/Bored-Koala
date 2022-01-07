@@ -5,7 +5,7 @@ const MovieCard = ({ imdbID, Title, Year, Poster }) => {
   return (
     <div className='movie-card'>
       <Link to={`/movies/${imdbID}`}>
-        <p>{Title}</p>
+        <h3>{Title}</h3>
         <picture>
           <img src={Poster} alt={Title} />
         </picture>

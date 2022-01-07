@@ -14,10 +14,10 @@ const JokeList = () => {
   }, [])
 
   return (
-    <section className='story-list'>
+    <section className='joke-list'>
       {jokes ? (
-        <>
-          <p> Welcome to CHUck Norris Jokes:</p>
+        <div className='joke-list-container'>
+          <p> Welcome to Chuck Norris Jokes:</p>
           <JokeCard {...jokes} isHorizontal={true} />
 
           <Link to={'/'}>
@@ -26,7 +26,7 @@ const JokeList = () => {
           <button onClick={handleClick} type='button' value='next'>
             next
           </button>
-        </>
+        </div>
       ) : (
         <div>
           <h4>Loading...</h4>

@@ -7,7 +7,7 @@ import MovieCard from '../Components/MovieCard'
 
 const MovieList = () => {
   const [movies, setMovies] = useState([])
-  const [search, setSearch] = useState('star') //make ' star' inside so that default value will be star in search item everytime the userrefreshes...
+  const [search, setSearch] = useState('avengers') //make ' star' inside so that default value will be star in search item everytime the userrefreshes...
   const [value, setValue] = useState('')
   const handleChange = (event) => {
     event.preventDefault()
@@ -36,7 +36,7 @@ const MovieList = () => {
   // }, [])
 
   return (
-    <>
+    <div className='search'>
       <h4>Search Movies:</h4>
       <div className='Search'>
         <form onSubmit={handleSubmit}>
@@ -53,24 +53,30 @@ const MovieList = () => {
         </form>
       </div>
       {!movies ? (
-        <p>
-          {' '}
-          Sorry, there are no movies with '{search}' in the title. Try using
-          other characters.{' '}
-        </p>
+        <div className='not-found'>
+          <p>
+            {' '}
+            Sorry, there are no movies with '{search}' in the title. Try using
+            other characters.{' '}
+          </p>
+        </div>
       ) : (
-        <section className='movie-list'>
-          <p> Movies with '{search}' in their title </p>
-          <ul>
-            {movies.map((movie) => (
-              <li key={movie.imdbID}>
-                <MovieCard {...movie} />
-              </li>
-            ))}
-          </ul>
-        </section>
+        <>
+          <div div className='movie'>
+            <p> Movies with '{search}' in their title </p>
+          </div>
+          <section className='movie-list'>
+            <ul>
+              {movies.map((movie) => (
+                <li key={movie.imdbID}>
+                  <MovieCard {...movie} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        </>
       )}
-    </>
+    </div>
   )
 }
 

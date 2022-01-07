@@ -9,21 +9,20 @@ const SongCard = ({
   url,
 }) => {
   return (
-    // <Link to={`/movies/${imdbID}`}>
-    <div>
+    <div className='music-card'>
       <h4>{result.full_title}</h4>
-      <p>{result.artist_names}</p>
       <picture>
         <img
           src={result.song_art_image_thumbnail_url}
           alt={result.full_title}
         />
       </picture>
-      <p>
-        <a href={result.url}>Get Lyrics Here !!</a>
+      <p className='lyrics'>
+        <a href={result.url} target='_blank' rel='noreferrer'>
+          Get Lyrics Here !!
+        </a>
       </p>
     </div>
-    // </Link>
   )
 }
 
