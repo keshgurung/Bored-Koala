@@ -1,10 +1,15 @@
 # Project-2 React Hackathon- Bored Koala
 
+** Bored Koala ** - This is my second project from the General Assembly Course SEI-59.
+
 A live version of this project can be found on netlify --> https://boredkoala.netlify.app/
 
 ## Goal
 
-To create a web application using React and external APIs.
+- To create a web application using React and external APIs within 2 days time frame,
+- Data to be fetched from external API using axios,
+- Using React.js on the frontend,
+- Deploy project online,
 
 # Time Frame
 
@@ -25,7 +30,7 @@ To create a web application using React and external APIs.
 
 ## Overview
 
-Bored Koala is a React API app project developed using two api's from RapidAPI and chucknorris jokes api where you can search movies name, ratings and more as well as music artists, their top 10 hit songs and lyrics and you can freshen up by reading to chucknorris jokes too. All the data are fetched from API calls and shown in my react app.
+Bored Koala is a React API app project developed using two api's from RapidAPI and chucknorris jokes api where you can search movies name, ratings and more as well as music artists, their top 10 hit songs and lyrics and you can freshen up by reading to Chuck Norris jokes too. All the data is fetched from API calls and shown in my react app.
 
 ## Instructions
 
@@ -51,7 +56,14 @@ Bored Koala is a React API app project developed using two api's from RapidAPI a
 
 ## Process
 
-I started the project by searching for a suitable API that could be useful to my application, and then, I selected RapidAPI IMDB Movie API,and Music APi as my API to fetch data to my application.
+# Planning:
+
+I started the project by searching for a suitable API that could be useful to my application, and then, I selected RapidAPI's IMDB Movie API,and Music API as my API to fetch data to my application. After selecting API, i created a wireframe on how our application will look on the frontend.
+
+![p2](/assets/p2.jpg)
+
+# App Development:
+
 The first stage of the development was to read the documentation of the API endpoints and test the endpoints using Insomnia to understand the structure of data received from the API call.
 
 ```
@@ -64,7 +76,7 @@ The first stage of the development was to read the documentation of the API endp
 }
 ```
 
-After getting information about the data structure, axios get request was called to fetch data from the api and to show it in the application. Using the function getMovieData() below,the app made an axios get request to the API to retrieved data and set it on our component state. To display these data we used React components in our main app, the list of movies that was retrieved from the API was shown in movies page.
+After getting information about the data structure, axios get request was called to fetch data from the api and to show it in the application. Using the function getMovieData() below,the app made an axios get request to the API to retrieved data and set it on our component state. To display these data we used React components in our main app, the list of movies that was retrieved from the API was shown on movies page.
 
 ```
  export const getMovieData = async (search) => {
@@ -82,7 +94,7 @@ After getting information about the data structure, axios get request was called
 }
 ```
 
-To provide better experience for the user, search bar was added in the application which allows user to search and find the movie, they are looking.
+To provide a better experience for the user, a search bar was added in the application which allows users to search and find the movie they are looking for.
 
 ```
 ** Use of react hook, useEffect to fetch data from API everytime new search is entered. **
@@ -100,7 +112,7 @@ const [movies, setMovies] = useState([])
 
 ```
 
-After the received data is saved on movies, i use (map) function to show all the movies on my application page.
+After the received data is saved on movies, i used (map) function to show all the movies on my application page.
 
 ```
 ** map is used to populate the result by calling every element in the movies array **
@@ -114,11 +126,11 @@ After the received data is saved on movies, i use (map) function to show all the
 
 ## Challenges
 
-The main challenge of this project was to apply search option in the application and get results accordingly. The value from the search bar has to be updated with the API search params to get the result.
+The main challenge of this project was to apply a search option in the application and get results accordingly. The value from the search bar has to be updated with the API search params to get the result.
 
-Secondly, it was a bit tedious to get all information about the movies from a single request. Data from first request had to be passed to another request to get the desired result, with the movie id.
+Secondly, it was a bit tedious to get all the information about the movies from a single request. Data from the first request had to be passed to another request to get the desired result, with the movie id.
 
-Error handling was also an challenging aspect of the project. Getting a negative response from axios request and showing the result in the page was a bit tricky and challenging.
+Error handling was also a challenging aspect of the project. Getting a negative response from axios request and showing the result in the page was a bit tricky and challenging.
 
 ## Wins
 
@@ -184,11 +196,18 @@ Another important win was the use of ternary operator in the application for err
 )}
 ```
 
+## Key Learnings:
+
+- Create React app, and use it to build the frontend of the application,
+- JSX, React Components,and React Hooks,
+- Use of axios get request, to fetch data from API to front,
+- Using Postman, Insomnia for API testing,
+
 ## Future Features
 
 Some of the extra features to implement in the future are:
 
-- show recommendations based on the movies selected.
-- make the application dynamic on all devices (mobiles, pads and larger screens).
-- adding a sort feature on result page.
-- implement a paginations feature to show more movies.
+- Show recommendations based on the movies selected.
+- Make the application dynamic on all devices (mobiles, pads and larger screens).
+- Adding a sort feature on the result page.
+- Implement a paginations feature to show more movies.
