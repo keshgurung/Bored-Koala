@@ -56,13 +56,13 @@ Bored Koala is a React API app project developed using two api's from RapidAPI a
 
 ## Process
 
-# Planning:
+### Planning:
 
 I started the project by searching for a suitable API that could be useful to my application, and then, I selected RapidAPI's IMDB Movie API,and Music API as my API to fetch data to my application. After selecting API, i created a wireframe on how our application will look on the frontend.
 
 ![p2](/assets/p2.jpg)
 
-# App Development:
+### App Development:
 
 The first stage of the development was to read the documentation of the API endpoints and test the endpoints using Insomnia to understand the structure of data received from the API call.
 
