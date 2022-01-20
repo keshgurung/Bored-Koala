@@ -112,7 +112,7 @@ const [movies, setMovies] = useState([])
 
 ```
 
-After the received data is saved on movies, i used (map) function to show all the movies on my application page.
+After the received data is saved on movies, I used (map) function to show all the movies on my application page.
 
 ```
 ** map is used to populate the result by calling every element in the movies array **
