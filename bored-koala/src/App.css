@@ -13,8 +13,31 @@
   color: #61dafb;
 }
 
-/* .Bored {
-  background-image: url('./Assets/1.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+.single-movie {
+  display: flex;
+  flex-direction: column;
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+.ratings p {
+  border-bottom: 1px solid black;
+}
+
+.main {
+  display: flex;
+}
+.images {
+  width: 50%;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.info p {
+  font-size: 16px;
+}

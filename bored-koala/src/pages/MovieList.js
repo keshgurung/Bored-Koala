@@ -1,9 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { getMovieData } from '../helpers/api'
-// import SearchIcon from '@material-ui/icons/Search'
 import MovieCard from '../Components/MovieCard'
-// import { useNavigate } from 'react-router-dom'
 
 const MovieList = () => {
   const [movies, setMovies] = useState([])
@@ -27,13 +25,6 @@ const MovieList = () => {
   useEffect(() => {
     getMovieData(search).then(setMovies)
   }, [search])
-  // const getData = async () => {
-  //   const allMovies = await getMovieData(search)
-  //   setMovies(allMovies)
-  //   }
-  //   getData()
-  //   console.log('the data is', movies)
-  // }, [])
 
   return (
     <div className='search'>
