@@ -36,7 +36,7 @@ const SingleMovieCard = ({
           <p>Genre: {Genre}</p>
           <p>Writer: {Writer}</p>
           <p>Director: {Director}</p>
-          <p>Plot: {Plot}</p>
+          <p className='plot'>Plot: {Plot}</p>
           <p>Language: {Language}</p>
           <p>Country: {Country}</p>
           <p>BoxOffice: {BoxOffice}</p>
