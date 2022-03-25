@@ -26,10 +26,10 @@ export const getMusicData = async (search) => {
 export const getMovieData = async (search) => {
   const config = {
     method: 'GET',
-    url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
+    url: 'https://movie-database-alternative.p.rapidapi.com/',
     params: { s: `${search}` },
     headers: {
-      'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com',
+      'x-rapidapi-host': 'movie-database-alternative.p.rapidapi.com',
       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
     },
   }
@@ -40,10 +40,10 @@ export const getMovieData = async (search) => {
 export const getSingleMovie = async (imdbID) => {
   const config = {
     method: 'GET',
-    url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
+    url: 'https://movie-database-alternative.p.rapidapi.com/',
     params: { i: `${imdbID}` },
     headers: {
-      'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com',
+      'x-rapidapi-host': 'movie-database-alternative.p.rapidapi.com',
       'x-rapidapi-key': 'aeb717ee1emsha514d9d6575c369p1ee3ffjsne764f2a7e700',
     },
   }
